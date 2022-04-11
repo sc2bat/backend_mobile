@@ -1,0 +1,85 @@
+pom.xml
+
+shoppingmall
+
+gradle 이 아닌 maven으로
+
+pom.xml
+<!-- oracle datebase -->
+<repositories>
+	<repository>
+		<id>oracle</id>
+		<name>ORACLE JDBC Repository</name>
+		<url>http://maven.jahia.org/maven2</url>
+	</repository>
+</repositories>
+
+dependencies tag 내에
+<!-- JSP -->
+<dependency>
+	<groupId>org.apache.tomcat.embed</groupId>
+	<artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+<dependency>
+	<groupId>jstl</groupId>
+	<artifactId>jstl</artifactId>
+	<version>1.2</version>
+</dependency>
+
+<!-- fileUpload -->
+<dependency> 
+	<groupId>servlets.com</groupId> 
+	<artifactId>cos</artifactId> 
+	<version>05Nov2002</version> 
+</dependency>
+
+
+
+application.properties
+
+#Server port
+server.port = 8070
+
+#about JSP
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+#oracle set
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=scott
+spring.datasource.password=tiger
+
+#mybatis
+mybatis.mapper-locations=classpath:mybatis/mapper/**/**.xml
+
+#multi-part Form
+spring.servlet.multipart.enabled=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
