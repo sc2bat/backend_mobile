@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style type="text/css">
+        .mobile_sidebar_open_btn{
+            position: absolute;
+            bottom:160px;
+            margin-left:30px;
+            border:1px solid black;
+            width:50px;
+            height:50px;
+            background: url('mobile/mobile_menu.png') 20% 20%  no-repeat;
+            background-position: left 50% top 30%;
+            background-size: 100px;
+        }
+
+        .mobile_sidebar_menu{
+            display: none;
+            width: 60%;
+            height: 100%;
+            background: rgb(214, 224, 186);
+            position: absolute;
+            top:0;
+            left: -50%;
+        }
+        
+        .mobile_sidebar_background{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            position: absolute;
+            top:0;
+            display: none;
+        }
+
+        .mobile_sidebar_close_btn{
+            background: url('mobile/mobile_close.png') 20% 20%  no-repeat;
+            background-position: left 50% top 30%;
+            background-size: 100px;
+            width: 50px;
+            height: 50px;
+            margin:10px;
+            position: absolute;
+            top:30px;
+            right:-30%;
+        }
+
+        .mobile_sidebar_menu{
+            padding-left:30px;
+            font-size:200%;
+        }
+
+        .mobile_sidebar_menu ul{
+            padding:0px;
+            list-style: none;
+            font-size:90%;
+            border-top:3px solid black;
+        }
+
+        .mobile_sidebar_menu ul li:first-child{
+            font-size:110%;
+            font-weight: bold;
+            border-bottom:3px solid black;
+        }
+
+        .mobile_sidebar_menu ul li a{
+            text-decoration: none;
+            color:black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="mobile_sidebar_open_btn"></div>
+
+    <div class="mobile_sidebar_background"></div>
+    <div class="mobile_sidebar_menu">
+        <div class="mobile_sidebar_close_btn"></div>
+        <h2>MyPage Sidebar</h2>
+        <div>
+            <ul>
+                <li>쇼핑</li>
+                <li><a href="orderList">주문목록</a></li>
+                <li><a href="tracking">배송조회</a></li>
+                <li><a href="cancelList">취소내역</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>활동</li>
+                <li><a href="qnaWriteForm">문의하기</a></li>
+                <li><a href="qnaList">문의목록</a></li>
+                <li><a href="reviewList">리뷰관리</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>정보</li>
+                <li><a href="memberUpdateForm">정보 수정</a></li>
+                <li><a href="payManage">청년페이 관리</a></li>
+                <li><a href=payUseList>청년페이 내역</a></li>
+                <li><a href="#" onClick="confirmOfDelete()">회원 탈퇴</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+ 
+            $('.mobile_sidebar_open_btn').on('click', function(){
+                $('.mobile_sidebar_background').show(); 
+                $('.mobile_sidebar_menu').show().animate({
+                    left:0
+                });  
+            });
+            $('.mobile_sidebar_close_btn').on('click', function(){
+                $('.mobile_sidebar_background').hide(); 
+                $('.mobile_sidebar_menu').animate({
+                    left: '-' + 50 + '%'
+                    },
+                    function(){
+                        $('.mobile_sidebar_menu').hide(); 
+                    }); 
+            });
+
+        });
+
+    </script>
+</body>
+</html>

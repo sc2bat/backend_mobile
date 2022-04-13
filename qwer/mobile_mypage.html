@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style type="text/css">
+        .mobile_title{
+            position: relative;
+            margin:0 auto;
+            width:100%;
+            height:100px;
+        }
+
+        .mobile_mypage_box{
+            position: relative;
+            margin:0 auto;
+            width:100%;
+        }
+
+        .mobile_mypage_list{
+            /* height: 500px; */
+            list-style: none;
+            margin:0 0 20px 0;
+            padding: 0px;
+            border:3px solid black;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .mobile_mypage_list li{
+            line-height: 80px;
+            padding-left: 30px;
+            font-size:150%;
+            margin:10px;
+            height:80px;
+            display: none;
+        }
+
+        .mobile_mypage_list li:first-child{
+            text-align: center;
+            padding-left: 0px; 
+            display:block;
+        }
+
+
+    </style>
+    
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <div class="mobile_title">${title}</div>
+    <div class="mobile_mypage_box">
+        <ul class="mobile_mypage_list">
+            <li>프로필</li>
+            <li style="display:block">아이디 : </li>
+            <li style="display:block">이름 : </li>
+            <li style="display:block">성별 : </li>
+            <li style="display:block">가입날짜 : </li>
+        </ul>
+        <ul class="mobile_mypage_list">
+            <li>프로필</li>
+            <li>아이디 : </li>
+            <li>이름 : </li>
+            <li>성별 : </li>
+            <li>가입날짜 : </li>
+        </ul>
+        <ul class="mobile_mypage_list">
+            <li>프로필</li>
+            <li>아이디 : </li>
+            <li>이름 : </li>
+            <li>성별 : </li>
+            <li>가입날짜 : </li>
+        </ul>
+        <ul class="mobile_mypage_list">
+            <li>프로필</li>
+            <li>아이디 : </li>
+            <li>이름 : </li>
+            <li>성별 : </li>
+            <li>가입날짜 : </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        $(".mobile_mypage_list").click(function(){
+            var num = $(this).index(".mobile_mypage_list");
+            $(".mobile_mypage_list li").css({"display":"none"});
+            $(".mobile_mypage_list li:first-child").css({"display":"block"});
+            $(".mobile_mypage_list li").eq(5 * num + 1).css({"display":"block"});
+            $(".mobile_mypage_list li").eq(5 * num + 2).css({"display":"block"});
+            $(".mobile_mypage_list li").eq(5 * num + 3).css({"display":"block"});
+            $(".mobile_mypage_list li").eq(5 * num + 4).css({"display":"block"});
+            $(".mobile_mypage_list li").eq(5 * num + 5).css({"display":"block"});
+        });
+    </script>
+</body>
+</html>
